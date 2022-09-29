@@ -3,7 +3,8 @@ const fs = require("fs");
 const templates = require("./templates");
 
 const componentName = process.argv[2];
-
+console.log(process.argv,"xxx2")
+console.log(componentName,"xxx3")
 if (!componentName) {
   console.error("Please supply a valid component name".red);
   process.exit(1);

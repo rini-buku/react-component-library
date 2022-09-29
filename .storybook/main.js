@@ -1,9 +1,20 @@
 const path = require("path");
 
 module.exports = {
-  stories: ["../src/**/*.stories.tsx"],
+  stories: ["../src/**/*.stories.@(ts|tsx|js|jsx|mdx)" ],
   // Add any Storybook addons you want here: https://storybook.js.org/addons/
-  addons: [],
+    addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss')
+        }
+      }
+    }
+  ],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
@@ -12,13 +23,13 @@ module.exports = {
     });
 
     config.module.rules.push({
-      test: /\.(ts|tsx)$/,
+      test: /\.(ts|tsx|mdx)$/,
       loader: require.resolve("babel-loader"),
       options: {
         presets: [["react-app", { flow: false, typescript: true }]]
       }
     });
-    config.resolve.extensions.push(".ts", ".tsx");
+    config.resolve.extensions.push(".ts", ".tsx", ".mdx");
 
     return config;
   }
