@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HarveyD/react-component-library.git"
+    "url": "git+https://github.com/rini-buku/react-component-library.git"
   },
   "keywords": [
     "React",
@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/HarveyD/react-component-library/issues"
   },
-  "homepage": "https://github.com/HarveyD/react-component-library#readme",
+  "homepage": "https://bukuwarung.github.io/componentLibrary",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
