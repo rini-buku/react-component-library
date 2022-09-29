@@ -16,7 +16,8 @@
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
